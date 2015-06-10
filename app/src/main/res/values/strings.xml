@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">广东科普志愿者</string>
+
+    <string name="title_section1">首页</string>
+    <string name="title_section2">志愿者服务中心</string>
+    <string name="title_section3">服务呼叫</string>
+    <string name="title_section4">科普资源中心</string>
+    <string name="title_section5">社区互动</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_example">Example action</string>
+
+    <string name="action_settings">Settings</string>
+</resources>
