@@ -1,5 +1,6 @@
 package recursion123.volunteer;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.os.Build;
 import android.support.v4.app.FragmentActivity;
@@ -55,9 +56,18 @@ public class MainActivity extends FragmentActivity
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction()
-                .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
-                .commit();
+        switch(position+1){
+            case 1:
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, HomePageFragment.newInstance(position + 1))
+                        .commit();
+                break;
+            default:
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
+                        .commit();
+                break;
+        }
     }
 
     public void onSectionAttached(int number) {
@@ -80,9 +90,11 @@ public class MainActivity extends FragmentActivity
         }
     }
 
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
     public void restoreActionBar() {
         android.app.ActionBar actionBar = getActionBar();
         actionBar.setDisplayShowTitleEnabled(true);
+        actionBar.setHomeAsUpIndicator(R.mipmap.ic_dehaze_white_24dp);
         actionBar.setTitle(mTitle);
     }
 
